@@ -1,8 +1,31 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { BrowserRouter } from "react-router-dom";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+
+test("displays the Little Lemon heading", () => {
+  global.fetchAPI = jest.fn(() => ["17:00", "18:00"]);
+
+  render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+
+  const heading = screen.getByRole("heading", {
+    level: 1,
+    name: /little lemon/i,
+  });
+
+  expect(heading).toBeInTheDocument();
+
+  delete global.fetchAPI;
 });
+
+
+ 
+
+
+
+
