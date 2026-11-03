@@ -1,70 +1,87 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Little Lemon Restaurant
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+Little Lemon is a responsive restaurant website built with React for the Meta Front-End Developer Capstone project.
 
-### `npm start`
+The application allows customers to browse restaurant information and make table reservations.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Responsive homepage with restaurant information
+- Navigation between the homepage and booking page
+- Reservation form with date, time, guest count, and occasion
+- Available reservation times provided by a simulated API
+- Form validation to prevent invalid reservations
+- Booking confirmation page
+- Error handling for unsuccessful reservations
+- Accessible form labels and semantic HTML
+- Automated tests using React Testing Library and Jest
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- JavaScript
+- HTML and CSS
+- React Router
+- React Hooks (useState, useReducer, useEffect)
+- Jest and React Testing Library
+- Git and GitHub
 
-### `npm run build`
+## Installation and Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   git clone https://github.com/Hallie-M/Little-Lemon.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Navigate into the project folder:
 
-### `npm run eject`
+   cd Little-Lemon
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Install project dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Start the development server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   npm start
 
-## Learn More
+5. Open http://localhost:3000 in your browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Running Tests
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Run the automated tests with:
 
-### Code Splitting
+npm test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Reservation Instructions
 
-### Analyzing the Bundle Size
+1. Open the Little Lemon website.
+2. Select Reservations from the navigation.
+3. Choose a valid reservation date.
+4. Select an available reservation time.
+5. Enter the number of guests.
+6. Choose the occasion.
+7. Submit the reservation form.
+8. View the booking confirmation page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## API Information
 
-### Making a Progressive Web App
+The project uses a simulated reservation API provided for the Meta Front-End Developer Capstone coursework.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The API supplies available reservation times and simulates reservation submissions.
 
-### Advanced Configuration
+No live restaurant reservation backend is connected.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Author
 
-### `npm run build` fails to minify
+Halimah Muhammad
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub: [Hallie-M](https://github.com/Hallie-M)
+
+Meta Front-End Developer Professional Certificate
+
+Developed as part of the Meta Front-End Developer Professional Certificate Capstone Project.
