@@ -5,7 +5,7 @@ import ConfirmedBooking from "./ConfirmedBooking";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import BookingPage from "./BookingPage";
 import HomePage from "./HomePage";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 
 
 export const initializeTimes = () => {
@@ -24,6 +24,9 @@ export const updateTimes = (state, action) => {
 function Main() {
 
   const navigate = useNavigate();
+  const [bookingError, setBookingError] = useState("");
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+
 
 
   const [availableTimes, dispatch] = useReducer(
@@ -33,17 +36,28 @@ function Main() {
   );
 
 
-const submitForm = (formData) => {
-  const success = submitAPI(formData);
+
+  const submitForm = (formData) => {
+    setBookingError("");
+
+    const success = submitAPI(formData);
+
+    if (success) {
+      navigate("/confirmed");
+    } else {
+      setBookingError(
+        "We couldn't complete your reservation. Please try again."
+      );
+    }
+  };
 
 
 
 
 
-  if (success) {
-    navigate("/confirmed");
-  }
-};
+
+
+
 
 
   return (
@@ -57,6 +71,7 @@ const submitForm = (formData) => {
             availableTimes={availableTimes}
             dispatch={dispatch}
             submitForm={submitForm}
+            bookingError={bookingError}
 
           />}
         />
@@ -67,7 +82,7 @@ const submitForm = (formData) => {
       </Routes>
     </main>
   )
-}
+};
 
 export default Main;
 

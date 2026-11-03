@@ -5,7 +5,7 @@ function Footer() {
     <footer>
       <h2>Little Lemon</h2>
       <div className="footer-grid">
-        <div>
+       <nav aria-label="Footer navigation">
           <h3>Navigation</h3>
           <ul>
             <li><a href="/">Home</a></li>
@@ -13,7 +13,7 @@ function Footer() {
             <li><a href="/#menu">Menu</a></li>
             <li><a href="/booking">Reservations</a></li>
           </ul>
-        </div>
+        </nav>
 
         <div>
           <h3>Contact</h3>

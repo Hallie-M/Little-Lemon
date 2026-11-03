@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+
+
+
 
 function BookingForm({ availableTimes, dispatch, submitForm }) {
 
@@ -8,21 +12,42 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [guests, setGuests] = useState(2);
   const [occasion, setOccasion] = useState("Birthday");
 
+  useEffect(() => {
+  setTime((currentTime) =>
+    availableTimes.includes(currentTime)
+      ? currentTime
+      : availableTimes[0] || ""
+  );
+}, [availableTimes]);
+
+
+  const isFormValid = () => {
+    return (
+      date !== "" &&
+      new Date(date + "T00:00:00") >= new Date(new Date().toDateString()) &&
+      time !== "" &&
+      availableTimes.includes(time) &&
+
+      guests >= 1 &&
+      guests <= 10 &&
+      occasion !== ""
+    );
+  };
+
+
 
 
   return (
-    <form onSubmit={(e) => {
-  e.preventDefault();
+    <form
+      className="booking-form"
+      onSubmit={(e) => {
+        e.preventDefault();
 
 
-
-
-
-
-  if (submitForm) {
-    submitForm({ date, time, guests, occasion });
-  }
-}}>
+        if (submitForm && isFormValid()) {
+          submitForm({ date, time, guests, occasion });
+        }
+      }}>
 
       <h2>Book a Table</h2>
 
@@ -32,7 +57,8 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         required
         id="res-date"
         value={date}
-          onChange={(e) => {
+        min={new Date().toLocaleDateString("en-CA")}
+        onChange={(e) => {
           setDate(e.target.value);
           dispatch({
             type: "UPDATE_TIMES",
@@ -47,6 +73,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
       <label htmlFor="res-time">Choose Time</label>
       <select
         id="res-time"
+        required
         value={time}
         onChange={(e) => setTime(e.target.value)}
       >
@@ -58,7 +85,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
 
       </select>
 
-      <label htmlFor="guests">Number of Guest</label>
+      <label htmlFor="guests">Number of Guests</label>
       <input
         type="number"
         required
@@ -72,6 +99,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
       <label htmlFor="occasion">Choose Occasion</label>
       <select
         id="occasion"
+        required
         value={occasion}
         onChange={(e) => setOccasion(e.target.value)}
       >
@@ -84,8 +112,8 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
 
 
 
-  
-</form>
+
+    </form>
 
 
 

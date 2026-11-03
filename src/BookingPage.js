@@ -1,10 +1,10 @@
 import BookingForm from "./BookingForm";
 
 
-function BookingPage ({availableTimes,dispatch, submitForm}){
+function BookingPage ({availableTimes,dispatch, submitForm,bookingError}){
   return (
     <section>
-      <h2>
+      <h2 className="booking-heading" >
         Reserve a Table
       </h2>
 
@@ -16,8 +16,18 @@ function BookingPage ({availableTimes,dispatch, submitForm}){
   
   />
 
+
+{bookingError && (
+  <p role="alert" style={{ color: "red" }}>
+    {bookingError}
+  </p>
+)}
+
+
     </section>
   )
+
+
 
 
 

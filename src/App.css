@@ -194,9 +194,9 @@ header p {
 #about {
   background-color: #f9f9f9;
   padding: 60px 40px;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
 
 }
 
@@ -233,9 +233,9 @@ gap: 40px;
   align-items: center;
   box-sizing: border-box;
 
-position: absolute;
-top: 0;
-right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 
 }
 
@@ -250,9 +250,9 @@ right: 0;
   align-items: center;
   box-sizing: border-box;
 
-position: absolute;
-top: 110px;
-right: 100px;
+  position: absolute;
+  top: 110px;
+  right: 100px;
 
 }
 
@@ -290,6 +290,13 @@ footer a:hover {
   margin-top: 30px;
 }
 
+
+.footer-grid nav {
+  background-color: transparent;
+  padding: 0;
+}
+
+
 footer ul {
   list-style: none;
   padding: 0;
@@ -300,6 +307,12 @@ footer ul {
 
 
 @media (max-width: 768px) {
+
+  nav[aria-label="Main navigation"] ul {
+    gap: 12px;
+    justify-content: center;
+  }
+
 
   #hero {
     grid-template-columns: 1fr;
@@ -317,19 +330,62 @@ footer ul {
     grid-template-columns: 1fr;
   }
 
-#about {
-  grid-template-columns: 1fr;
+  #about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image-one,
+  .about-image-two {
+    width: 65%;
+    max-width: 280px;
+  }
+
+  .about-image-two {
+    right: 15%;
+  }
+
 }
 
-.about-image-one,
-.about-image-two {
-  width: 65%;
-  max-width: 280px;
+.booking-form {
+  display: flex;
+  flex-direction: column;
 }
 
-.about-image-two {
-  right: 15%;
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 
+.booking-form input[type="submit"] {
+  background-color: #f4ce14;
+  color: #333333;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.booking-form input:not([type="submit"]),
+.booking-form select {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+
+.booking-heading {
+  text-align: center;
+  margin-bottom: 20px;
 }
