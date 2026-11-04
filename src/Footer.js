@@ -5,7 +5,7 @@ function Footer() {
     <footer>
       <h2>Little Lemon</h2>
       <div className="footer-grid">
-       <nav aria-label="Footer navigation">
+        <nav aria-label="Footer navigation">
           <h3>Navigation</h3>
           <ul>
             <li><a href="/">Home</a></li>
@@ -18,14 +18,8 @@ function Footer() {
         <div>
           <h3>Contact</h3>
           <p>Chicago, Illinois</p>
-          <p>Phone: Coming Soon</p>
-          <p>Email: Coming Soon</p>
-        </div>
+          <p>For reservations, please use our online booking form.</p>
 
-        <div>
-          <h3>Social Media</h3>
-          <p>Facebook</p>
-          <p>Instagram</p>
         </div>
       </div>
     </footer>
